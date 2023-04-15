@@ -1,0 +1,27 @@
+{
+  "name": "wheelchair-blockchain",
+  "version": "1.0.0",
+  "description": "Student blockchain project within the educational SPBSTU project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donebd/blockchain.git"
+  },
+  "author": "Daniil Bakin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donebd/blockchain/issues"
+  },
+  "homepage": "https://github.com/donebd/blockchain#readme",
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "randomstring": "^1.2.3"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/randomstring": "^1.1.8"
+  }
+}
