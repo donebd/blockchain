@@ -1,4 +1,4 @@
-import sha256 from 'crypto-js/sha256';
+import * as sha256 from 'crypto-js/sha256';
 
 export class Block {
   public readonly index: number;

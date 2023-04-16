@@ -4,7 +4,10 @@
   "description": "Student blockchain project within the educational SPBSTU project",
   "main": "src/main.ts",
   "scripts": {
-    "start": "node --loader ts-node/esm --es-module-specifier-resolution=node src/main.ts ",
+    "build": "tsc && npm run copy-cfg",
+    "run": "node --loader ts-node/esm --es-module-specifier-resolution=node dist/main.js",
+    "start": "npm run build && npm run run",
+    "copy-cfg": "cp ./src/config/blockchain.properties ./dist/config/blockchain.properties",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,5 +1,5 @@
 import { Blockchain } from "../blockchain/blockchain";
-import WebSocket from 'ws';
+import * as WebSocket from 'ws';
 
 export class NodeEnvironment {
 

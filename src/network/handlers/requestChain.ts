@@ -1,4 +1,4 @@
-import WebSocket from 'ws';
+import * as WebSocket from 'ws';
 import { Block } from "../../blockchain/block";
 import { PropertyReader } from "../../config/propertyReader";
 import { ChainProtocolMsgType } from "../../enum/chainProtocolMsgType";
