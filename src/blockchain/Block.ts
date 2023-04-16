@@ -14,6 +14,13 @@ export class Block {
     this.previousHash = previousHash;
   }
 
+  public static createInstance(index: number, data: string, hash: string, previousHash: string, nonce: number): Block {
+    const block = new Block(index, data, previousHash);
+    block._hash = hash;
+    block.nonce = nonce;
+    return block;
+  }
+
   public get hash(): string {
     if (this._hash) {
       return this._hash;
@@ -27,7 +34,11 @@ export class Block {
       this.nonce++;
       this._hash = this.hashcode();
     }
-  };
+  }
+
+  public toString() {
+
+  }
 
   private hashcode(): string {
     return sha256(this.index + this.previousHash + this.data + this.nonce).toString();
