@@ -1,4 +1,4 @@
-import randomstring from "randomstring";
+import * as randomstring from "randomstring";
 
 export function getRandomString(): string {
     return randomstring.generate({

@@ -1,4 +1,5 @@
-import WebSocket, { WebSocketServer } from 'ws';
+import { WebSocketServer } from 'ws';
+import * as WebSocket from 'ws';
 import { PropertyReader } from '../config/propertyReader';
 import { ChainProtocolMsgType } from '../enum/chainProtocolMsgType';
 import { MessageT, SocketT } from '../types';

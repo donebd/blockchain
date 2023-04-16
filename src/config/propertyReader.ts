@@ -1,4 +1,4 @@
-import propertiesReader from 'properties-reader';
+import * as propertiesReader from 'properties-reader';
 import * as path from 'path';
 
 export class PropertyReader {
@@ -10,7 +10,7 @@ export class PropertyReader {
     private static propertiesReader = propertiesReader(path.join(__filename, '..', 'blockchain.properties'));
 
     public static getAddress(): string {
-        const address = this.getProperty("address");
+        const address = this.getProperty("ADDRESS");
         if (address) {
             return `${address}:${this.getPort()}`;
         }
@@ -18,7 +18,7 @@ export class PropertyReader {
     }
 
     public static getPort(): number {
-        const port = this.getProperty("port");
+        const port = this.getProperty("PORT");
         if (port) {
             return Number(port);
         }
@@ -26,7 +26,7 @@ export class PropertyReader {
     }
 
     public static getPeers(): string[] {
-        const peersString = this.getProperty("peers");
+        const peersString = this.getProperty("PEERS");
         if (peersString) {
             return peersString.split(' ');
         }
@@ -34,7 +34,7 @@ export class PropertyReader {
     }
 
     public static getBlockchainDifficulty(): number {
-        const difficulty = this.getProperty("difficulty");
+        const difficulty = this.getProperty("DIFFICULTY");
         if (difficulty) {
             return Number(difficulty);
         }
@@ -42,6 +42,9 @@ export class PropertyReader {
     }
 
     private static getProperty(name: string): string | null {
+        if (process.env[name]) {
+            return process.env[name] as string;
+        }
         let result = this.propertiesReader.get(name);
         if (!result) {
             return null;
