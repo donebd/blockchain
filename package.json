@@ -2,8 +2,9 @@
   "name": "wheelchair-blockchain",
   "version": "1.0.0",
   "description": "Student blockchain project within the educational SPBSTU project",
-  "main": "index.js",
+  "main": "src/main.ts",
   "scripts": {
+    "start": "node --loader ts-node/esm --es-module-specifier-resolution=node src/main.ts ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,10 +19,15 @@
   "homepage": "https://github.com/donebd/blockchain#readme",
   "dependencies": {
     "crypto-js": "^4.1.1",
-    "randomstring": "^1.2.3"
+    "properties-reader": "^2.2.0",
+    "randomstring": "^1.2.3",
+    "ts-node": "^10.9.1",
+    "ws": "^8.13.0"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.1.1",
-    "@types/randomstring": "^1.1.8"
+    "@types/properties-reader": "^2.1.1",
+    "@types/randomstring": "^1.1.8",
+    "@types/ws": "^8.5.4"
   }
 }

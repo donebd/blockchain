@@ -1,18 +1,12 @@
-import { getRandomString } from '../helpers/Helpers';
-import { Block } from './Block';
+import { getRandomString } from '../helpers/helpers';
+import { Block } from './block';
 
 export class Blockchain {
 
-  public readonly difficulty: number;
-  public chain: Block[];
-
-  constructor(difficulty: number) {
-    this.chain = [this.createGenesisBlock()];
-    this.difficulty = difficulty;
-  }
+  public chain: Block[] = [this.createGenesisBlock()];
 
   public addBlock(block: Block): boolean {
-    const lastBlock = this.getLastBlock()!;
+    const lastBlock = this.getLastBlock();
     const hashIsValid = block.previousHash === lastBlock.hash;
     const indexIsValid = block.index === lastBlock.index + 1;
 
@@ -25,7 +19,7 @@ export class Blockchain {
   }
 
   public getLastBlock() {
-    return this.getBlockByIndex(this.chain.length - 1);
+    return this.getBlockByIndex(this.chain.length - 1)!;
   }
 
   public getBlockByIndex(index: number): Block | null {
